@@ -33,13 +33,14 @@ class App extends Component {
   render() {
     return(
 
-      <div>
-        <h1>Astronomy picture of the day</h1>
-        <h2>by NASA</h2>
+      <div class="main-container">
+        <h1>NASA's Astronomy picture of the day</h1>
+        <div class="date-picker-container">
         <DateInput
           changeDate={this.changeDate}
           date={this.state.date}
         />
+        </div>
         <Photo photo={this.state.photo} />
       </div>
     );
