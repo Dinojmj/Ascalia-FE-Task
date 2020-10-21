@@ -355,13 +355,13 @@ textarea {
 
 
 ::-moz-selection {
-    background: black;
+    background: #ee293d;
     color: white;
     text-shadow: none;
 }
 
 ::selection {
-    background: black;
+    background: #ee293d;
     color: white;
     text-shadow: none;
 }
@@ -392,3 +392,203 @@ textarea {
 RESET END
 
 **********************/
+
+
+* {
+	font-family: 'Roboto', sans-serif !important;
+	font-size: 100%;
+}
+
+body {
+	background-color: #33373b;
+}
+
+.main-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.main-container h1 {
+	background-color: #1a5dac;
+	color: #fff;
+	text-align: center;
+
+	-webkit-border-bottom-right-radius: 50px;
+	-webkit-border-bottom-left-radius: 50px;
+	-moz-border-radius-bottom-right: 50px;
+	-moz-border-radius-bottom-left: 50px;
+	border-bottom-right-radius: 50px;
+	border-bottom-left-radius: 50px;
+	
+}
+
+.date-picker-container {
+	font-size: 18px;
+	color: #fff;
+}
+
+.react-datepicker-wrapper {
+	margin-left: 12px;
+}
+
+.title-image {
+	text-align: center;
+	color: #fff;
+}
+
+.date-picker-container {
+	font-size: 16px;
+}
+
+.main-container img,
+.text-explanation {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.main-container img {
+	display: block;
+	margin: auto;
+}
+
+.text-explanation,
+.text-author,
+footer p {
+	line-height: 24px;
+	font-weight: 400;
+	max-width: 540px;
+	color: #fff;
+}
+
+.text-explanation {
+	text-transform: none;
+	font-size: 15px;
+	background-color: #5b6066;
+	text-align: left;
+	box-sizing: border-box;
+	margin: auto;
+}
+
+.text-author {
+	font-size: 18px;
+	text-align: right;
+	margin: auto;
+}
+
+footer {
+	background-color: #1a5dac;
+}
+
+footer p {
+	max-width: 1200px;
+	margin: 0 auto;
+	text-align: left;
+	font-size: 15px;
+}
+
+@media all and (min-width: 0px) and (max-width: 599px) {
+
+	.main-container img {
+		width: 100%;
+		height: auto;
+		overflow: hidden;
+	}
+
+	.main-container h1 {
+		padding: 36px 18px;
+		font-size: 32px;
+		margin-bottom: 30px;
+	}
+
+	.title-image {
+		font-size: 18px;
+		margin: 36px 0 24px;
+	}
+
+	.text-explanation {
+		padding: 5%;
+		margin-top: 30px;
+	}
+
+	.text-author {
+		margin-top: 30px;
+	}
+
+	footer {
+		padding: 48px 5% 36px;
+		margin-top: 48px;
+	}
+}
+
+@media all and (min-width: 600px) and (max-width: 1023px) {
+
+	.main-container img {
+		width: 100%;
+		height: auto;
+		overflow: hidden;
+	}
+
+	.main-container h1 {
+		padding: 48px 24px;
+		font-size: 40px;
+		margin-bottom: 36px;
+	}
+
+	.title-image {
+		font-size: 20px;
+		margin: 42px 0 30px;
+	}
+
+	.text-explanation {
+		padding: 40px;
+	}
+
+	.text-author {
+		margin-top: 36px;
+	}
+
+	footer {
+		padding: 54px 5% 42px;
+		margin-top: 54px;
+	}
+}
+
+@media all and (min-width: 1024px) {
+
+	.main-container img {
+		width: auto;
+		height: 600px;
+		overflow: hidden;
+	}
+
+	.main-container h1 {
+		padding: 60px 30px;
+		font-size: 48px;
+		margin-bottom: 42px;
+
+	}
+
+	.date-picker-container {
+		font-size: 18px;
+	}
+
+	.title-image {
+		font-size: 24px;
+		margin: 48px 0 36px;
+	}
+
+	.text-explanation {
+		padding: 40px;
+		margin-top: 42px;
+	}
+
+	.text-author {
+		margin-top: 42px;
+	}
+
+	footer {
+		padding: 60px 5% 48px;
+		margin-top: 60px;
+	}
+}
