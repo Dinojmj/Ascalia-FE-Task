@@ -5,25 +5,27 @@ import Photo from "./components/Photo.js";
 
 class App extends Component {
   state = {
-    date: "",
+    date: new Date(),
     photo: ""
   };
 
-  changeDate = e => {
-    e.preventDefault();
-    let dateFromInput = e.target[0].value;
-    this.setState({ date: dateFromInput });
-    this.getPhoto(dateFromInput);
+  formatDate = (date) => {
+    return date.toISOString().split('T')[0];
+  };
+
+  changeDate = date => {
+    this.setState({ date: date });
+    this.getPhoto(this.formatDate(date));
   };
 
   componentDidMount() {
-    fetch('https://api.nasa.gov/planetary/apod?api_key=swlRzIuhKxjcJwckaku9QGLgk1Ex2PbqafDNoLED')
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=swlRzIuhKxjcJwckaku9QGLgk1Ex2PbqafDNoLED`)
       .then(response => response.json())
       .then(json => this.setState({ photo: json }));
   };
 
   getPhoto = date => {
-    fetch('https://api.nasa.gov/planetary/apod?api_key=swlRzIuhKxjcJwckaku9QGLgk1Ex2PbqafDNoLED&date=${date}')
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=swlRzIuhKxjcJwckaku9QGLgk1Ex2PbqafDNoLED&date=${date}`)
       .then(response => response.json())
       .then(photoData => this.setState({ photo: photoData }));
   };
@@ -34,7 +36,10 @@ class App extends Component {
       <div>
         <h1>Astronomy picture of the day</h1>
         <h2>by NASA</h2>
-        <DateInput changeDate={this.changeDAte} />
+        <DateInput
+          changeDate={this.changeDate}
+          date={this.state.date}
+        />
         <Photo photo={this.state.photo} />
       </div>
     );
